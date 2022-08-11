@@ -7,8 +7,8 @@ enum Role {
   Guest
 }
 // 默认从 0 开始枚举
-console.log(Role.Reporter) // > 0
-console.log(Role.Developer) // > 1
+// console.log(Role.Reporter) // > 0
+// console.log(Role.Developer) // > 1
 // console.log(Role)
 
 /**
@@ -31,7 +31,7 @@ enum Message {
   Fail = '抱歉，失败了'
 }
 
-console.log(Message.Success) // > 恭喜你，成功了
+// console.log(Message.Success) // > 恭喜你，成功了
 
 // 异构枚举
 // 指数字枚举和字符串枚举混合（不建议使用）
@@ -79,8 +79,8 @@ let e1: E.a = 1
 let e2: E.b
 // e1 === e2 同上
 let e3: E.a = 1
-console.log('enum', e1 === e3) // >true
+// console.log('enum', e1 === e3) // >true
 
 let g1: G = G.b
 let g2: G.a = G.a // 只能赋值 G.a
-console.log('g2', g2) // >apple
+// console.log('g2', g2) // >apple
