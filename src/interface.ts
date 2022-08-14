@@ -81,3 +81,33 @@ interface Names {
   // y: number; // 不允许
   [z: number]: string;
 }
+
+// 函数类型接口
+// let addFun: (x: number, y: number) => number
+
+// 此定义和上面等价
+// interface AddFun {
+//   (x: number, y: number): number;
+// }
+
+// 类型别名定义和上面等价
+type AddFun = (x: number, y: number) => number
+
+const addFun: AddFun = (a, b) => a + b
+
+// 混合类型接口
+interface Lib {
+  (): void;
+  version: string;
+  doIt(): void;
+}
+
+function getLib() {
+  let lib: Lib = (() => {}) as Lib
+  lib.version = '1.0'
+  lib.doIt = () => {}
+  return lib
+}
+
+const lib1 = getLib()
+lib1.doIt()
