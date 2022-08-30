@@ -40,3 +40,64 @@ class Doraemon extends Cat {
 // readonly 只读修饰符，作用是只读，不能更改
 // 构造函数中的参数添加修饰符，可以使之成为实例属性
 // static 静态修饰符，只允许类名访问 Cat.food，它也可以被继承 Doraemon.food
+
+
+// 抽象类
+// 抽象类只能被继承，不能被实例化
+abstract class Animal {
+  eat() {
+    console.log('eat')
+  }
+
+  // 在抽象类里面指定一个无具体实现的方法，称为抽象方法
+  abstract sleep(): void
+}
+
+class Dog extends Animal {
+  constructor(name: string) {
+    super()
+    this.name = name
+  }
+  name: string
+  run() {}
+  sleep() {
+    console.log('dog sleep')
+  }
+}
+
+let dog = new Dog('wangwang')
+dog.eat()
+
+// 多态
+class Pig extends Animal {
+  sleep() {
+    console.log('pig sleep')
+  }
+}
+
+let pig = new Pig()
+
+let animals: Animal[] = [dog, pig]
+animals.forEach((item) => {
+  item.sleep()
+})
+
+// 返回 this 实现链式调用
+class WorkFlow {
+  step1() {
+    return this
+  }
+  step2() {
+    return this
+  }
+}
+
+new WorkFlow().step1().step2()
+
+class MyFlow extends WorkFlow {
+  next() {
+    return this
+  }
+}
+
+new MyFlow().next().step1().next().step2()
