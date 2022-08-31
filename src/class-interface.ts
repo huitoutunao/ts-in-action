@@ -52,6 +52,12 @@ class C implements AutoInterface {
   state = 1
 }
 
-class Bus extends Auto implements AutoInterface {
+class Bus extends Auto implements AutoInterface {}
 
-}
+/**
+ * 总结
+ * + interface 与 interface 之间的继承 extends
+ * + class 与 class 之间的继承 extends
+ * + interface 继承 class => extends，继承包含类的 public、private、protected
+ * + class 继承 interface => implements，继承包含接口的 public
+*/
