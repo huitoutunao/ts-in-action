@@ -89,5 +89,11 @@ interface Point2D {
 // 函数参数可以相互赋值的情况下，称为函数参数的双向协变，允许一个精确的类型赋值给不那么精确的类型。
 let p3d = (point: Point3D) => {}
 let p2d = (point: Point2D) => {}
-// p3d = p2d
-// p2d = p3d
+p3d = p2d
+// p2d = p3d // 不兼容
+
+// 3、返回值类型
+let ff1 = () => ({name: 'jack'})
+let gg1 = () => ({name: 'jack', location: 'Beijing'})
+ff1 = gg1
+// gg1 = ff1 // 不兼容
