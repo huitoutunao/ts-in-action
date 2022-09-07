@@ -31,6 +31,9 @@ foo.bar = 1
 // 类型兼容性
 // 定义：当一个类型 y 可以被赋值给另一个类型 x 时，我们就可以说类型 x 兼容类型 y
 //  x 兼容 y：x（目标类型）= y（源类型）
+// 口诀
+// 结构之间兼容：成员少的兼容成员多的
+// 函数之间兼容：参数多的兼容参数少的
 
 let s: string = 'a'
 s = null // null 是字符型的子类型
@@ -109,3 +112,49 @@ enum Color { Red, Yellow }
 let fruit: Fruit.Apple = 3
 let n: number = Fruit.Apple
 // let color: Color.Red = Fruit.Apple // 不兼容，枚举与枚举之间不兼容
+
+// 类兼容性
+// 静态成员和构造函数是不参与比较
+class A {
+  constructor(p: number, b: number) {}
+  id: number
+  private name: string = ''
+}
+class B {
+  static s = 1
+  constructor(p: number) {}
+  id: number
+  private name: string = ''
+}
+
+let aa = new A(1, 2)
+let bb = new B(1)
+// aa = bb
+// bb = aa
+
+// 如果父类含有私有成员，那么它的子类和父类是可以相互兼容的
+class AA extends A {}
+let aaa = new AA(1, 3)
+aa = aaa
+aaa = aa
+
+// 泛型兼容性
+interface Empty<T> {
+  // value: T // 导致下面的等式 obj1 = obj2 不兼容
+}
+
+let obj1: Empty<number> = {}
+let obj2: Empty<string> = {}
+obj1 = obj2
+
+let log3 = <T>(x: T): T => {
+  console.log('x')
+  return x
+}
+
+let log4 = <U>(y: U): U => {
+  console.log('y')
+  return y
+}
+
+log3 = log4 // 没有指定泛型的具体类型，它们是兼容的
