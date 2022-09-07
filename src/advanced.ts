@@ -97,3 +97,15 @@ let ff1 = () => ({name: 'jack'})
 let gg1 = () => ({name: 'jack', location: 'Beijing'})
 ff1 = gg1
 // gg1 = ff1 // 不兼容
+
+function overload(a: number, b: number): number;
+function overload(a: string, b: string): string;
+function overload(a: any, b: any): any {}
+// function overload(a: any, b: any, c: any): any {} // 不兼容，实现参数的个数多余目标函数的个数
+
+// 枚举兼容性
+enum Fruit { Apple, Banana }
+enum Color { Red, Yellow }
+let fruit: Fruit.Apple = 3
+let n: number = Fruit.Apple
+// let color: Color.Red = Fruit.Apple // 不兼容，枚举与枚举之间不兼容
