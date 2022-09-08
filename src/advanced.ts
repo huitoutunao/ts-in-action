@@ -158,3 +158,62 @@ let log4 = <U>(y: U): U => {
 }
 
 log3 = log4 // 没有指定泛型的具体类型，它们是兼容的
+
+// 类型保护
+// 定义：TypeScript 能够在特定的区块中保证变量属于某种确定的类型。可以在此区块中放心地引用此类型的属性，或者调用此类型的方法。
+enum Type { Strong, Week }
+
+class Java {
+  helloJava() {
+    console.log('hello java')
+  }
+  java: any
+}
+
+class JavaScript {
+  helloJavaScript() {
+    console.log('hello javascript')
+  }
+  javascript: any
+}
+
+// 类型保护函数
+function isJava(lang: Java | JavaScript): lang is Java {
+  return (lang as Java).helloJava !== undefined
+}
+
+function getLanguage(type: Type, x: string | number) {
+  let lang = type === Type.Strong ? new Java() : new JavaScript()
+
+  // 1、instanceof
+  // if (lang instanceof Java) {
+  //   lang.helloJava()
+  // } else {
+  //   lang.helloJavaScript()
+  // }
+
+  // 2、in
+  // 前提是分别给 Java 和 JavaScript 类添加属性 java 和 javascript
+  // if ('java' in lang) {
+  //   lang.helloJava()
+  // } else {
+  //   lang.helloJavaScript()
+  // }
+
+  // 3、typeof
+  // 前提是给函数 getLanguage 添加参数 x
+  // if (typeof x === 'string') {
+  //   x.length
+  // } else {
+  //   x.toFixed(2)
+  // }
+
+  // 4、创建类型保护函数 isJava
+  // if (isJava(lang)) {
+  //   lang.helloJava()
+  // } else {
+  //   lang.helloJavaScript()
+  // }
+
+  return lang
+}
