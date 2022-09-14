@@ -217,3 +217,17 @@ function getLanguage(type: Type, x: string | number) {
 
   return lang
 }
+
+// 高级类型：交叉类型与联合类型
+// 交叉类型就是取并集
+interface DogInterface {
+  run(): void
+}
+interface CatInterface {
+  jump(): void
+}
+
+let pet: DogInterface & CatInterface = {
+  run() {},
+  jump() {},
+}
