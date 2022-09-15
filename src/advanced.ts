@@ -231,3 +231,36 @@ let pet: DogInterface & CatInterface = {
   run() {},
   jump() {},
 }
+
+let aa1: number | string = '1' // 限定变量取值类型
+let bb1: 'a' | 'b' | 'c' // 限定变量取值范围
+let cc1: 1 | 2 | 3 // 限定变量取值范围
+
+class Dogg implements DogInterface {
+  run() {}
+  eat() {}
+}
+
+class Catt implements CatInterface {
+  jump() {}
+  eat() {}
+}
+enum Master { Boy, Girl }
+function getPet(master: Master) {
+  // 对象联合类型，只能访问公有成员
+  let pet = master === Master.Boy ? new Dogg() : new Catt()
+  pet.eat()
+  return pet
+}
+
+// 可区分的联合类型
+interface Square {
+  kind: 'square';
+  size: number;
+}
+interface Retangle {
+  kind: 'retangle';
+  width: number;
+  height: number;
+}
+type Shape = Square | Retangle
