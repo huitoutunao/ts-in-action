@@ -263,4 +263,21 @@ interface Retangle {
   width: number;
   height: number;
 }
-type Shape = Square | Retangle
+interface Circle {
+  kind: 'circle';
+  r: number;
+}
+type Shape = Square | Retangle | Circle
+function area(s: Shape) {
+  switch(s.kind) {
+    case 'square':
+      return s.size * s.size
+    case 'retangle':
+      return s.width * s.height
+    case 'circle':
+      return Math.PI * s.r ** 2
+    default:
+      return ((e: never) => { throw new Error(e) })(s)
+  }
+}
+console.log(area({ kind: 'circle', r: 1 }))
