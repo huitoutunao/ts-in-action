@@ -306,3 +306,33 @@ function getValue<T, K extends keyof T>(obj: T, keys: K[]): T[K][] {
 }
 console.log(getValue(obj3, ['a', 'b']))
 // console.log(getValue(obj3, ['e', 'f'])) // 不合法
+
+// 映射类型
+interface Obj4 {
+  a: string;
+  b: number;
+  c: boolean;
+}
+
+// 同态类型
+type ReadonlyObj4 = Readonly<Obj4>
+
+type PartialObj4 = Partial<Obj4>
+
+type PickObj4 = Pick<Obj4, 'a' | 'b'>
+
+// 非同态类型
+type RecordObj4 = Record<'x' | 'y', Obj4>
+
+// 条件类型
+type TypeName<T> =
+  T extends string ? 'string' :
+  T extends number ? 'number' :
+  T extends boolean ? 'boolean' :
+  T extends undefined ? 'undefined' :
+  T extends Function ? 'function' :
+  'object';
+
+type T1 = TypeName<string>
+type T2 = TypeName<string[]>
+
