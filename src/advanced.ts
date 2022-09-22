@@ -336,3 +336,11 @@ type TypeName<T> =
 type T1 = TypeName<string>
 type T2 = TypeName<string[]>
 
+// 命名空间
+namespace Shape {
+  export function square(x: number) {
+    return x * x
+  }
+}
+Shape.square(2)
+
