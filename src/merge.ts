@@ -32,3 +32,28 @@ let aaa1: AAA = {
     return bar
   }
 }
+
+// 命名空间和函数的合并，函数须放置前面
+function Lib() {}
+namespace Lib {
+  export let version = '1.0.0'
+}
+console.log(Lib.version)
+
+// 命名空间与类合并，类须放置前面
+class CCC {}
+namespace CCC {
+  export let state = 1
+}
+console.log(CCC.state)
+
+// 命名空间与枚举合并
+enum Color {
+  Red1,
+  Yellow1,
+  Bule1
+}
+namespace Color {
+  export function mix() {}
+}
+console.log(Color)
