@@ -57,3 +57,4 @@ namespace Color {
   export function mix() {}
 }
 console.log(Color)
+

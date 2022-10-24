@@ -343,4 +343,3 @@ namespace Shape {
   }
 }
 Shape.square(2)
-
