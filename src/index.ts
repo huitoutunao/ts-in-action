@@ -1,5 +1,5 @@
 //#region
-// 这个是初识学习文件
+// 这是初识文件
 // import './data-type'
 // import './enum'
 // import './interface'
@@ -8,7 +8,7 @@
 //#endregion
 
 //#region
-// 这是复习学习文件
+// 这是复习文件
 // import ./review/data-type.ts
 //#endregion
 
