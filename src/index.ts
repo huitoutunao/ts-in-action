@@ -9,8 +9,8 @@
 
 //#region
 // 这是复习文件
-// import ./review/data-type.ts
+import './review/basic.ts'
 //#endregion
 
 const demo: string = 'hello world'
-console.log('say', demo)
+console.log(demo)
