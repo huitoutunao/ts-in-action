@@ -49,7 +49,7 @@ console.log(CCC.state)
 
 // 命名空间与枚举合并
 enum Color {
-  Red1,
+  Red1 = 0,
   Yellow1,
   Bule1
 }
