@@ -13,4 +13,4 @@ import './review/basic.ts'
 //#endregion
 
 const demo: string = 'hello world'
-console.log('say', demo)
+console.log(demo)
