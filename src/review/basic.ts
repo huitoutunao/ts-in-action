@@ -47,14 +47,38 @@
   // f 类型是 any，它可以赋值给任意变量
   // g1 = f
 
-  // unknown 实际上是一个类型安全的 any
-  // unknown 类型的变量，不能直接赋值给其他变量
+  /**
+   * 1. unknown 实际上是一个类型安全的 any
+   * 2. unknown 类型的变量，不能直接赋值给其他变量
+   * 总结：尽量使用 unknown 代替 any，any 只作为逃生舱
+   * /
   // g1 = g // 类型报错
   // 如何解决呢？
-  // 方案一：事先判断类型为 string
+  // 方案一：事先判断变量类型为 string
   // if (typeof g === 'string') {
   //   g1 = g
   // }
-  // 方案二：类型断言
+  /**
+   * 方案二：类型断言，可以用来告诉解析器变量的实际类型
+   * 语法：
+   *  + 变量 as 类型
+   *  + <类型>变量
+  */
   g1 = g as string
+  g1 = <string>g
+
+  // void 类型表示空，以函数为例，表示没有返回值的函数
+  function fn(): void {
+    // console.log('hello')
+    // return null
+    return undefined
+    // return true // 类型报错
+  }
+
+  // never 表示永远不会返回结果，一般用于输出报错信息的函数
+  function fn2(): never {
+    throw new Error('报错信息')
+    // return null // 类型报错
+    // return undefined // 类型报错
+  }
 })()
