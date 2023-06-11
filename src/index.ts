@@ -9,7 +9,8 @@
 
 //#region
 // 这是复习文件
-import './review/basic.ts'
+import './review/basic'
+import './review/narrowing'
 //#endregion
 
 const demo: string = 'hello world'
