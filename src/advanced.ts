@@ -36,7 +36,7 @@ foo.bar = 1
 // 函数之间兼容：参数多的兼容参数少的
 
 let s: string = 'a'
-s = null // null 是字符型的子类型
+// s = null // null 是字符型的子类型
 
 // 接口兼容性
 interface X {
@@ -109,32 +109,36 @@ function overload(a: any, b: any): any {}
 // 枚举兼容性
 enum Fruit { Apple, Banana }
 enum Color { Red, Yellow }
-let fruit: Fruit.Apple = 3
+let fruit: Fruit.Apple = 0
 let n: number = Fruit.Apple
 // let color: Color.Red = Fruit.Apple // 不兼容，枚举与枚举之间不兼容
 
 // 类兼容性
 // 静态成员和构造函数是不参与比较
 class A {
-  constructor(p: number, b: number) {}
   id: number
+  constructor(p: number, b: number, id: number) {
+    this.id = id
+  }
   private name: string = ''
 }
 class B {
   static s = 1
-  constructor(p: number) {}
   id: number
+  constructor(p: number, id: number) {
+    this.id = id
+  }
   private name: string = ''
 }
 
-let aa = new A(1, 2)
-let bb = new B(1)
+let aa = new A(1, 2, 3)
+let bb = new B(1, 2)
 // aa = bb
 // bb = aa
 
 // 如果父类含有私有成员，那么它的子类和父类是可以相互兼容的
 class AA extends A {}
-let aaa = new AA(1, 3)
+let aaa = new AA(1, 3, 5)
 aa = aaa
 aaa = aa
 
