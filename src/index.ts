@@ -14,5 +14,5 @@
 import './review/functions'
 //#endregion
 
-const demo: string = 'hello world'
-console.log(demo)
+// const demo: string = 'hello world'
+// console.log(demo)
