@@ -25,7 +25,27 @@
 
   // 索引签名
   interface StringArray {
-    [index: string]: string
+    [index: number]: string
   }
+  const getStringArray = () => ['1', '2', '3']
+  const myArray: StringArray = getStringArray()
+  const secondItem = myArray[1]
+  console.log(secondItem)
 
+  // 虽然 TypeScript 可以同时支持 string 和 number 类型，但数字索引的返回类型一定要是字符索引返回类型的子类型。
+  interface Animal {
+    name: string
+  }
+  interface Dog extends Animal {
+    breed: string
+  }
+  /* 报错：数字索引的返回类型一定要是字符索引返回类型的子类型。
+  interface NotOkay {
+    [x: number]: Animal
+    [x: string]: Dog
+  } */
+  interface NotOkay {
+    [x: string]: Animal
+    [x: number]: Dog
+  }
 })()
