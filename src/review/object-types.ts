@@ -24,4 +24,8 @@
   }
 
   // 索引签名
+  interface StringArray {
+    [index: string]: string
+  }
+
 })()
