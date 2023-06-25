@@ -1,6 +1,7 @@
 import './assets/styles/index.less'
 import Food from './snake-game/modules/food'
 import ScorePanel from './snake-game/modules/score-panel'
+import Snake from './snake-game/modules/snake'
 
 /* // 测试代码
 const food = new Food()
