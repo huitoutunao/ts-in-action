@@ -22,4 +22,13 @@
     }
   ]
   loggingIdentity(lists)
+
+  // 在泛型约束中使用类型参数
+  function getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key]
+  }
+  const o1 = {a: 1, b: 2}
+  getProperty(o1, 'a')
+  // getProperty(o1, 'c')
+  // 类型 "c" 的参数不能赋给类型 "a" | "b" 的参数。
 })()
