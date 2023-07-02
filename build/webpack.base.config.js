@@ -65,8 +65,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'TypeScript In Action',
       filename: 'index.html',
-      // template: './public/index.html', // 通用模板
-      template: './src/snake-game/index.html', // 贪吃蛇游戏
+      template: './public/index.html', // 通用模板
+      // template: './src/snake-game/index.html', // 贪吃蛇游戏
     }),
   ],
   stats: 'errors-only',
