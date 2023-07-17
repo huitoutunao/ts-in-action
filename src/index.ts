@@ -18,5 +18,17 @@
 // 这是复习文件
 // import './review/basic'
 // import './review/narrowing'
-import './review/functions'
+// import './review/functions'
+import './review/utility-types'
+
+// import { createCatName } from './review/animal'
+// const name = createCatName()
+
+// 运行正常
+// import type { Animals } from './review/valid.js'
+// const ani: Animals = {
+//   breed: '',
+//   yearOfBirth: 18,
+// }
+
 //#endregion
