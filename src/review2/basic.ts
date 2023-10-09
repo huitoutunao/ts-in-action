@@ -53,4 +53,30 @@
     bar: 'bar',
   }
   console.log(o3.bar)
+
+  // 元组
+  const t1: [string, boolean, number?] = ['1', true]
+
+  // 不限成员数量
+  type NamedNums = [
+    string,
+    ...number[]
+  ]
+  const a1: NamedNums = ['A', 1, 2]
+  const b1: NamedNums = ['B', 1, 2, 3]
+
+  type Color = [
+    red: number,
+    greed: number,
+    blue: number
+  ]
+  const c1: Color = [255, 255, 255]
+  type Color2 = Color[1]
+
+  // symbol
+  const s3: symbol = Symbol()
+  const s4: symbol = Symbol()
+  const s5: unique symbol = Symbol()
+  // let s6: unique symbol = Symbol() // 报错
+  const s5_1 = Symbol()
 })()
