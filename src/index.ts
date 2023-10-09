@@ -15,11 +15,11 @@
 //#endregion
 
 //#region
-// 这是复习文件
+// 这是复习文件（B站视频）
 // import './review/basic'
 // import './review/narrowing'
 // import './review/functions'
-import './review/utility-types'
+// import './review/utility-types'
 
 // import { createCatName } from './review/animal'
 // const name = createCatName()
@@ -30,5 +30,9 @@ import './review/utility-types'
 //   breed: '',
 //   yearOfBirth: 18,
 // }
+//#endregion
 
+//#region
+// 学习阮一峰博客
+import './review2/basic'
 //#endregion
