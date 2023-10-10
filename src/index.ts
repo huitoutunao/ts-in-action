@@ -34,5 +34,6 @@
 
 //#region
 // 学习阮一峰博客
-import './review2/basic'
+// import './review2/basic'
+import './review2/functions'
 //#endregion
