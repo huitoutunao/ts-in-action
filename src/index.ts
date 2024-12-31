@@ -35,5 +35,10 @@
 //#region
 // 学习阮一峰博客
 // import './review2/basic'
-import './review2/functions'
+// import './review2/functions'
+//#endregion
+
+//#region
+// 学习掘金小册《TypeScript 全面进阶指南》
+import './review3/basic'
 //#endregion
