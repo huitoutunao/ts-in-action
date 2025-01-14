@@ -40,5 +40,6 @@
 
 //#region
 // 学习掘金小册《TypeScript 全面进阶指南》
-import './review3/basic'
+// import './review3/basic'
+import './review3/decorators'
 //#endregion
