@@ -3,7 +3,7 @@
       /* Basic Options */
       // "incremental": true,                   /* 增量编译，提高编译效率 */
       // "diagnostics": true,                   /* 打印诊断信息 */
-      "target": "es5",                          /* 目标语言的版本 */
+      "target": "es2021",                          /* 目标语言的版本 */
       "module": "commonjs",                     /* 生成代码的模块标准 */
       // "lib": [],                             /* TS 需要引用的库，即声明文件，es5 默认 "dom", "es5", "scripthost" */
       // "allowJs": true,                       /* 允许编译 JS 文件（.js、.jsx） */
